@@ -1,0 +1,261 @@
+.header {
+  .menu {
+    display: flex;
+    padding: 0.5rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--less-dark-color);
+    background: var(--bright-color);
+    gap: 1rem;
+
+    .search-box {
+      width: 100%;
+      max-width: 30rem;
+      position: relative;
+      z-index: 9;
+
+      #search {
+        width: 100%;
+        padding: 0.5rem 2.5rem 0.5rem 1rem;
+        border: none;
+        outline: none;
+        background: var(--less-dark-color);
+        border-radius: 1rem;
+        font-size: 1rem;
+        caret-color: var(--nature-color);
+      }
+
+      .material-icons {
+        position: absolute;
+        top: 0.3rem;
+        right: 0.5rem;
+        color: var(--grey-color);
+      }
+
+      .suggestion {
+        position: absolute;
+        width: 100%;
+        height: 0;
+        max-height: 20rem;
+        top: 2.8rem;
+        background: var(--bright-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        border-radius: 0 0.5rem 0.5rem 0;
+        border: none;
+        overflow-y: scroll;
+        z-index: 50;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+          width: 5px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: var(--body-color);
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: var(--active-color);
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+          background: var(--hover-color);
+        }
+
+        &.show {
+          height: auto;
+          border: 1px solid var(--less-dark-color);
+        }
+
+        .suggestion-item {
+          width: 100%;
+          border-bottom: 1px solid var(--less-dark-color);
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          &:hover {
+            background: var(--less-dark-color);
+          }
+
+          .suggestion-link {
+            width: 100%;
+            padding: 0.5rem 1rem;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 1rem;
+            color: var(--grey-color);
+
+            .suggestion-thumb {
+              width: 50px;
+              height: 40px;
+              border-radius: 0.3rem;
+            }
+
+            .suggestion-name {
+              width: 100%;
+              text-overflow: ellipsis;
+              word-break: break-all;
+              overflow: hidden;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+
+    .sub-menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+
+      .register {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--sky-color);
+        font-weight: bold;
+        transition: 0.1s;
+
+        &:active {
+          transform: scale(1.05);
+        }
+
+        .material-icons {
+          transform: rotateY(180deg);
+        }
+      }
+
+      .shopping {
+        position: relative;
+
+        .shopping-icon {
+          position: relative;
+          transition: 0.1s;
+          cursor: pointer;
+
+          &:active {
+            transform: scale(1.05);
+          }
+
+          .material-icons {
+            color: var(--nature-color);
+            font-size: 1.7rem;
+          }
+
+          #shopping-index {
+            position: absolute;
+            top: -0.5rem;
+            left: 0.4rem;
+            color: var(--bright-color);
+            background: var(--hover-color);
+            padding: 0.1rem 0.35rem 0;
+            border-radius: 50%;
+            font-size: 0.6rem;
+            opacity: 0;
+          }
+        }
+
+        .shopping-box {
+          display: none;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          position: absolute;
+          top: 1.8rem;
+          left: -0.8rem;
+          background: var(--bright-color);
+          width: 15rem;
+          height: auto;
+          max-height: 20rem;
+          border: 1px solid var(--grey-color);
+          border-radius: 0 0.5rem 0.5rem 0;
+          z-index: 10;
+          overflow-y: scroll;
+          padding: 0.5rem;
+          scrollbar-width: none;
+
+          &::-webkit-scrollbar {
+            width: 5px;
+            border-radius: 1rem;
+          }
+
+          &::-webkit-scrollbar-track {
+            background: var(--body-color);
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: var(--active-color);
+          }
+
+          &::-webkit-scrollbar-thumb:hover {
+            background: var(--hover-color);
+          }
+
+          &.show {
+            display: flex;
+          }
+
+          .shopping-items {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            flex-direction: flex-start;
+            justify-content: center;
+            align-items: center;
+
+            .shopping-item {
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0.5rem;
+              border-bottom: 1px solid var(--less-dark-color);
+              color: var(--grey-color);
+              gap: 1rem;
+
+              &:last-child {
+                border-bottom: none;
+              }
+
+              .shopping-item-name {
+                width: 100%;
+                text-overflow: ellipsis;
+                word-break: break-all;
+                overflow: hidden;
+                white-space: nowrap;
+              }
+            }
+          }
+
+          .confirm-shopping {
+            width: 100%;
+            padding: 0.5em;
+            text-align: center;
+            color: var(--bright-color);
+            background: var(--active-color);
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 0.5rem;
+            transition: 0.2s;
+
+            &:hover {
+              background: var(--hover-color);
+            }
+
+            &:active {
+              transform: scale(1.01);
+            }
+          }
+        }
+      }
+    }
+  }
+}

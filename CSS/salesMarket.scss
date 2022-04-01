@@ -1,0 +1,141 @@
+@import "config";
+@import "nav";
+@import "menu";
+@import "homePage";
+@import "footer";
+@import "salesMarketCategory";
+@import "salesMarketItems";
+@import "salesMarketOrders";
+@import "salesMarketLogin";
+@import "responsive";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+html {
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+body {
+  --body-color: #f1f5f8;
+  --dark-color: #000;
+  --less-dark-color: rgba(0, 0, 0, 0.08);
+  --more-dark-color: rgba(0, 0, 0, 0.85);
+  --grey-color: #666;
+  --bright-color: #fff;
+  --less-bright-color: rgba(255, 255, 255, 0.2);
+  --more-bright-color: rgba(255, 255, 255, 0.4);
+  --shadow-color: #eee;
+  --hover-color: #ff001f;
+  --active-color: #c70019;
+  --sky-color: #0af;
+  --sun-color: #ffc700;
+  --nature-color: #005810;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--body-color);
+  color: var(--dark-color);
+  font-family: "Mikhak", "Roboto", sans-serif;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+button {
+  cursor: pointer;
+  user-select: none;
+}
+ul,
+li {
+  list-style: none;
+}
+input,
+textarea,
+button {
+  font-family: "Mikhak", "Roboto", sans-serif;
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--more-dark-color);
+  z-index: 97;
+  opacity: 0;
+  pointer-events: none;
+  cursor: pointer;
+  transition: 1s;
+
+  &.show {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+#open-me {
+  position: fixed;
+  top: 5%;
+  transform: translate(0, -50%);
+  right: -100%;
+  background: var(--sun-color);
+  color: var(--dark-color);
+  padding: 0.5rem;
+  font-size: 2rem;
+  z-index: 90;
+  user-select: none;
+  transition: 0.2s;
+  border-radius: 2rem 0 0 2rem;
+  cursor: pointer;
+  transition: 1s;
+
+  &::hover {
+    text-shadow: -1px 1px 1px var(--grey-color);
+  }
+
+  &.active {
+    right: -0.3rem;
+  }
+}
+.header {
+  width: 100%;
+  z-index: 99;
+}
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 80vh;
+}
+.item-path {
+  display: flex;
+  width: 100%;
+  gap: 0.2rem;
+  padding-bottom: 0.5rem;
+  padding: 0.5rem;
+
+  a {
+    max-width: 120px;
+    color: var(--grey-color);
+    font-size: 0.9rem;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    word-break: break-all;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: 0.2s;
+
+    &:hover {
+      color: var(--dark-color);
+    }
+  }
+}

@@ -1,0 +1,424 @@
+.home-page {
+  .carrosel-wrapper {
+    width: 100%;
+    position: relative;
+    direction: ltr;
+
+    .carrosel {
+      width: 100%;
+      overflow: hidden;
+
+      .slider {
+        display: inline-flex;
+        justify-content: flex-start;
+        align-items: flex-star;
+        transform: translateX(0);
+        transition: 0.5s ease-out;
+
+        .slides {
+          display: flex;
+          width: 100vw;
+          justify-content: center;
+          align-items: center;
+          padding: 1rem;
+
+          .slide {
+            width: 100%;
+            height: 10rem;
+            overflow: hidden;
+            border-radius: 2rem;
+
+            .slide-img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .slides-index {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translate(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+
+      .slide-index {
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 2rem;
+        box-shadow: 0 1px 1px 1px var(--more-dark-color);
+        background: var(--bright-color);
+        transition: 0.5s;
+        cursor: pointer;
+
+        &.active {
+          background: var(--sky-color);
+          width: 1.6rem;
+        }
+      }
+    }
+  }
+
+  .fantastic-suggestions-wrapper {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+
+    .fantastic-suggestions {
+      width: 100%;
+      background: var(--bright-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      box-shadow: 0 0 3px 1px var(--shadow-color);
+      border-top: 5px solid var(--hover-color);
+      border-radius: 0.5rem;
+      gap: 1rem;
+
+      .fantastic-intro {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+
+        .intro-name {
+          background: var(--hover-color);
+          color: var(--bright-color);
+          padding: 0.5rem 1rem;
+          border-radius: 0 0 0.5rem 0.5rem;
+          font-weight: bold;
+        }
+
+        .intro-more {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 0.5rem;
+          color: var(--grey-color);
+          font-weight: bold;
+          cursor: pointer;
+          transition: 0.1s;
+
+          &:hover {
+            color: var(--dark-color);
+          }
+        }
+      }
+
+      .fantastic-suggestion-holder {
+        position: relative;
+        width: 100%;
+
+        .fantastic-suggestion {
+          width: 100%;
+          overflow: hidden;
+
+          .fantastic-items {
+            width: 400%;
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 1rem;
+            gap: 1rem;
+            transform: translateX(0);
+            transition: 0.7s ease-out;
+
+            .fantastic-item {
+              width: 100%;
+              max-width: 300px;
+              box-shadow: 0 1px 1px 1px var(--shadow-color);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              gap: 0.5rem;
+              border-radius: 1rem;
+              padding: 1rem;
+              transition: 0.3s;
+              overflow: hidden;
+
+              &:hover {
+                box-shadow: 0 1px 1px 1px var(--grey-color);
+              }
+
+              .fantastic-item-thumb-holder {
+                width: 100%;
+                max-width: 280px;
+                max-height: 280px;
+                border-radius: 0.1rem;
+                overflow: hidden;
+
+                .fantastic-item-thumb {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+
+              .fantastic-item-name-holder {
+                width: 100%;
+
+                .fantastic-item-name {
+                  width: 100%;
+                  text-align: right;
+                  padding-left: 0.5rem;
+                  text-overflow: ellipsis;
+                  word-break: break-all;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  color: var(--dark-color);
+                }
+              }
+
+              .fantastic-item-price {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .add-to {
+                  font-size: 2rem;
+                  font-weight: bold;
+                  color: var(--bright-color);
+                  background: var(--hover-color);
+                  opacity: 0.9;
+                  border-radius: 0.5rem;
+                  padding: 0.5rem 1rem;
+                  display: none;
+                }
+
+                .fantastic-item-discount {
+                  width: 100%;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: flex-end;
+                  gap: 0.2rem;
+
+                  .previous-price {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 0.8rem;
+                    gap: 0.5rem;
+
+                    .price {
+                      color: var(--grey-color);
+                      text-decoration: line-through;
+                    }
+
+                    .discount {
+                      color: var(--bright-color);
+                      background: var(--hover-color);
+                      border-radius: 1rem;
+                      padding: 0.2rem 0.5rem;
+                    }
+                  }
+
+                  .current-price {
+                    color: var(--dark-color);
+                    font-size: 1.1rem;
+                    font-weight: bold;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .right {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translate(0, -50%);
+          background: var(--bright-color);
+          color: var(--dark-color);
+          padding: 1rem 0.2rem;
+          font-size: 3rem;
+          border-radius: 0.5rem 0 0 0.5rem;
+          opacity: 0.5;
+          z-index: 10;
+          user-select: none;
+          transition: 0.2s;
+          cursor: pointer;
+          display: none;
+
+          &:hover {
+            opacity: 0.9;
+            background: var(--hover-color);
+            color: var(--bright-color);
+          }
+
+          &:active {
+            transform: translate(0, -50%) scale(1.1);
+          }
+        }
+
+        .left {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translate(0, -50%);
+          background: var(--bright-color);
+          color: var(--dark-color);
+          padding: 1rem 0.2rem;
+          font-size: 3rem;
+          border-radius: 0 0.5rem 0.5rem 0;
+          opacity: 0.5;
+          z-index: 10;
+          user-select: none;
+          cursor: pointer;
+          transition: 0.2s;
+
+          &:hover {
+            opacity: 0.9;
+            background: var(--hover-color);
+            color: var(--bright-color);
+          }
+
+          &:active {
+            transform: translate(0, -50%) scale(1.1);
+          }
+        }
+      }
+    }
+  }
+
+  .parent-observe {
+    width: 100%;
+    padding: 1rem;
+    overflow: hidden;
+    gap: 0.7rem;
+
+    .child-observe {
+      overflow: hidden;
+      position: relative;
+      opacity: 0;
+      transition: 2s;
+      border-radius: 1rem;
+      cursor: pointer;
+
+      .material-icons {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 5rem;
+        font-weight: bold;
+        background: var(--more-dark-color);
+        color: var(--more-bright-color);
+        border-radius: 50%;
+        padding: 1rem;
+        z-index: 4;
+        opacity: 0;
+        transition: 1s;
+      }
+
+      &.active {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        transition: 1s;
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.2);
+        }
+
+        .material-icons {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  .tech-observe {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 170px);
+    grid-template-areas:
+      "laptop laptop mobile mobile"
+      "camera camera mobile mobile";
+
+    .tech-mobile {
+      grid-area: mobile;
+      transform: translateX(-70%);
+    }
+
+    .tech-laptop {
+      grid-area: laptop;
+      transform: translateX(80%);
+    }
+
+    .tech-camera {
+      grid-area: camera;
+      transform: translateX(80%);
+    }
+  }
+
+  .fashion-observe {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 170px);
+    grid-template-areas:
+      "men men men men"
+      "women women women women"
+      "kids kids kids kids";
+
+    .fashion-men {
+      grid-area: men;
+      transform: translateX(80%);
+    }
+
+    .fashion-women {
+      grid-area: women;
+      transform: translateX(-80%);
+    }
+
+    .fashion-kids {
+      grid-area: kids;
+      transform: translateX(80%);
+    }
+  }
+
+  .kitchen-observe {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 170px);
+    grid-template-areas:
+      "lamps lamps audioes audioes"
+      "appliances appliances appliances appliances";
+    margin-bottom: 2rem;
+
+    .kitchen-audioes {
+      grid-area: audioes;
+      transform: translateX(-80%);
+    }
+
+    .kitchen-lamps {
+      grid-area: lamps;
+      transform: translateX(80%);
+    }
+
+    .kitchen-appliances {
+      grid-area: appliances;
+      transform: translateY(80%);
+    }
+  }
+}
