@@ -1030,9 +1030,12 @@ function setShoppingItems() {
 
 function setShoppingIndex() {
   if (shoppingItems.hasChildNodes()) {
-    const shoppingItem = document.querySelectorAll(".shopping-item")
+    let totalQuentity=0
+    shoppingList.forEach(item=>{
+      totalQuentity+=parseInt(item.quentity)
+    })
     shoppingIndex.style.opacity = 1
-    shoppingIndex.textContent = shoppingItem.length
+    shoppingIndex.textContent = totalQuentity
   } else {
     shoppingIndex.style.opacity = 0
   }
